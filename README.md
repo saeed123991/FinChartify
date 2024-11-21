@@ -91,26 +91,23 @@ flask run
 ![Bar Chart](https://via.placeholder.com/800x400?text=Bar+Chart)
 
 ---
-
 ## 🧩 **Folder Structure**
 ```
 FinChartify/
 │
-├── app.py                 # Main Flask application
-├── requirements.txt       # Dependencies
-├── database.db            # SQLite database
+├── instance/              # datebase folder
+│   ├── expenses.db        # database file
+├── static/                # Static files
+│   ├── styles.css         # Stylesheet
+│   └── script.js          # JavaScript file
 ├── templates/             # HTML templates
 │   ├── base.html          # Base template
 │   ├── index.html         # Landing page
 │   ├── login.html         # Login page
 │   ├── register.html      # Registration page
 │   ├── dashboard.html     # Dashboard for expense management
-│   └── pdf_template.html  # Template for PDF export
-│
-├── static/                # Static files
-│   ├── styles.css         # Stylesheet
-│   └── script.js          # JavaScript file
-│
+├── app.py                 # Main Flask application
+├── requirements.txt       # Dependencies
 └── README.md              # Project documentation
 ```
 
