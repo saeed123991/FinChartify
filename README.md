@@ -42,14 +42,25 @@ git clone https://github.com/yourusername/finchartify.git
 cd finchartify
 ```
 
-### **3. Install Dependencies**
+### **3. Create the Virtual Environment (Optional)**
+```bash
+python -m venv venv
+```
+
+### **4. Activate the Virtual Environment (Optional)**
+```bash
+source venv/bin/activate  (for linux bin bash)
+venv\scripts\activate     (for windows command prompt)
+```
+
+### **5. Install Dependencies**
 ```bash
 pip install -r requirements.txt
 ```
 
-### **4. Run the Application**
+### **6. Run the Application**
 ```bash
-flask run
+python app.py
 ```
 - The app will be accessible at `http://127.0.0.1:5000`.
 
