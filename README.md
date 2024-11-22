@@ -82,13 +82,13 @@ flask run
 
 ## 📸 **Screenshots**
 ### Landing Page
-![Landing Page](https://via.placeholder.com/800x400?text=Landing+Page)
+Image will be uploaded soon
 
 ### Dashboard
-![Dashboard](https://via.placeholder.com/800x400?text=Dashboard)
+Image will be uploaded soon
 
 ### Bar Chart
-![Bar Chart](https://via.placeholder.com/800x400?text=Bar+Chart)
+Image will be uploaded soon
 
 ---
 ## 🧩 **Folder Structure**
