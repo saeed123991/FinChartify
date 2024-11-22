@@ -97,16 +97,18 @@ FinChartify/
 │
 ├── instance/              # datebase folder
 │   ├── expenses.db        # database file
-├── static/                # Static files
+├── assets/                # Static files
 │   ├── styles.css         # Stylesheet
 │   └── script.js          # JavaScript file
-├── templates/             # HTML templates
+├── UI/                    # HTML files
 │   ├── base.html          # Base template
 │   ├── index.html         # Landing page
 │   ├── login.html         # Login page
 │   ├── register.html      # Registration page
 │   ├── dashboard.html     # Dashboard for expense management
 ├── app.py                 # Main Flask application
+├── config.py              # configrations file
+├── models.py              # datebase models
 ├── requirements.txt       # Dependencies
 └── README.md              # Project documentation
 ```
