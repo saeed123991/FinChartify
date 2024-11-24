@@ -84,14 +84,16 @@ python app.py
 
 ### **3. Manage Expenses**
 - **Search**: Use the search bar to filter expenses by name or description.
-- **Sort**: Click the **Sort** button to order expenses alphabetically.
 - **Edit**: Update any expense with the edit button.
 - **Delete**: Remove an expense using the delete button.
 
 ### **4. Generate Reports**
-- Click **Export PDF** to download a detailed report of your expenses.
+- Click **Export Excel** to download a CSV file having details of your expenses.
+- 
+### **5. Bar Charts**
+- Click **Show Chart** to display your expenses in charts having details of your expenses graphically.
 
-### **5. Logout**
+### **6. Logout**
 - Ensure your data's security by logging out after use.
 
 ---
