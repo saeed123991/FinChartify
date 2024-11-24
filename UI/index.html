@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="landing-page">
+    <div class="sidebar">
+        <h1>Welcome to FinChartify A Personal Expense Manager 📊💰</h1>
+        <p>Manage your expenses efficiently and easily! <button class="btn" onclick="document.getElementById('info-modal').style.display='block'">Info</button></p>
+        <div class="actions">
+            <a href="{{ url_for('login') }}" class="btn">Login</a>
+        </div>
+    </div>
+    <div id="info-modal" class="modal">
+        <div class="modal-content">
+            <span class="info-close-btn" onclick="document.getElementById('info-modal').style.display='none'">&times;</span>
+            <h2>About This Web Application</h2>
+            <p>
+                This Web Application helps you to track and manage your daily expenses with ease. 
+                <br>Features include:<br> 
+                -> Authentication <br>
+                -> Expense CRUD operations<br>
+                -> searching <br>
+                -> visual charts of expenses.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}
