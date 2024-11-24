@@ -48,10 +48,15 @@ python -m venv venv
 ```
 
 ### **4. Activate the Virtual Environment (Optional)**
-```bash
-source venv/bin/activate  (for linux bin bash)
-venv\scripts\activate     (for windows command prompt)
-```
+
+  - On Windows:
+     ```bash
+     venv\Scripts\activate
+     ```
+   - On macOS/Linux:
+     ```bash
+     source venv/bin/activate
+     ```
 
 ### **5. Install Dependencies**
 ```bash
