@@ -30,3 +30,18 @@ h2 {
     border-radius: 25px; 
     bottom: 0;
 }
+
+.btn {
+    background-color: #31511E;
+    color: #F6FCDF;
+    padding: 8px 16px;
+    text-decoration: none;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #859F3D;
+}
