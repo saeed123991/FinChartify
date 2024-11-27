@@ -88,3 +88,20 @@ label {
     padding: 20px;
 }
 
+.signup-link,
+.login-link {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #31511E;
+}
+
+.signup-link a,
+.login-link a {
+    color: #31511E;
+    text-decoration: none;
+}
+
+.signup-link a:hover,
+.login-link a:hover {
+    text-decoration: underline;
+}
