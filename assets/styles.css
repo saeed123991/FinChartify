@@ -45,3 +45,14 @@ h2 {
 .btn:hover {
     background-color: #859F3D;
 }
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+label {
+    font-size: 1rem;
+    color: #1A1A19;
+}
