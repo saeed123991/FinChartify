@@ -12,6 +12,19 @@ db.init_app(app)
 def index():
     return render_template('index.html')
 
+# Login Route
+@app.route('/login', methods=['GET', 'POST'])
+def login():
+    if request.method == 'POST':
+        username = request.form['username']
+        password = request.form['password']
+        user = User.query.filter_by(username=username, password=password).first()
+        if user:
+            session['user_id'] = user.id
+            return redirect(url_for('dashboard'))
+        return "Invalid Credentials", 401
+    return render_template('login.html')
+
 # from here my app finChartify will start
 if __name__ == '__main__':
     with app.app_context():
