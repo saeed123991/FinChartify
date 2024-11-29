@@ -134,3 +134,26 @@ label {
     right: 15px;
     cursor: pointer;
 }
+
+.sidebar {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.sidebar h1 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.sidebar p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
