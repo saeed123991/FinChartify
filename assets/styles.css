@@ -157,3 +157,18 @@ label {
     flex-direction: column;
     gap: 10px;
 }
+
+.btnDanger {
+    background-color: #1A1A19;
+    color: #F6FCDF;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 25px;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.btnDanger:hover {
+    background-color: red;
+}
