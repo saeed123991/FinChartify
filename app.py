@@ -38,6 +38,13 @@ def register():
         return redirect(url_for('login'))
     return render_template('register.html')
 
+# Dashboard Route
+@app.route('/dashboard')
+def dashboard():
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+    return render_template('dashboard.html')
+
 # from here my app finChartify will start
 if __name__ == '__main__':
     with app.app_context():
