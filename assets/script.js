@@ -29,6 +29,30 @@ document.addEventListener('DOMContentLoaded', () => {
         const expenses = await response.json();
         return expenses;
     };
+    const renderExpenses = (expenses) => {
+        expenseTable.innerHTML = '';
+        expenses.forEach(expense => {
+            const row = expenseTable.insertRow();
+            row.innerHTML = `
+                <td>${expense.id}</td>
+                <td>${expense.name}</td>
+                <td>${expense.description}</td>
+                <td>${expense.amount.toFixed(2)}</td>
+                <td>${expense.date}</td>
+                <td>
+                    <button class="btn edit-btn" data-id="${expense.id}">Edit</button>
+                    <button class="btnDanger delete-btn" data-id="${expense.id}">Delete</button>
+                </td>
+            `;
+        });
+        if (expenses.length > 0) {
+            chartBtn.style.display = 'inline-block';
+            exportExcelBtn.style.display = 'inline-block';
+        } else {
+            chartBtn.style.display = 'none';
+            exportExcelBtn.style.display = 'none';
+        }
+    };
 
 
     (async () => {
