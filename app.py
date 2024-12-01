@@ -99,6 +99,12 @@ def manage_expenses(id=None):
                 return jsonify({'message': 'Expense deleted successfully'}), 200
             return jsonify({'message': 'Expense not found'}), 404
 
+# Logout Route
+@app.route('/logout')
+def logout():
+    session.pop('user_id', None)
+    return render_template('index.html')
+
 # from here my app finChartify will start
 if __name__ == '__main__':
     with app.app_context():
