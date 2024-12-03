@@ -54,6 +54,31 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const updateChart = (expenses) => {
+        const labels = expenses.map(e => e.name);
+        const data = expenses.map(e => e.amount);
+        if (chartInstance) {
+            chartInstance.destroy();
+        }
+        chartInstance = new Chart(expenseChart, {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Expenses',
+                    data: data,
+                    backgroundColor: 'rgba(54, 162, 235, 0.6)',
+                }],
+            },
+            options: {
+                responsive: true,
+                plugins: {
+                    legend: { display: false },
+                },
+            },
+        });
+    };
+
 
     (async () => {
 
