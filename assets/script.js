@@ -79,6 +79,26 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     };
 
+    chartBtn.onclick = async () => {
+        const expenses = await fetchExpenses();
+        updateChart(expenses);
+        chartModal.style.display = 'block';
+    };
+
+    chartCloseBtn.onclick = () => {
+        chartModal.style.display = 'none';
+    };
+
+    window.onclick = (event) => {
+        if (event.target === chartModal) {
+            chartModal.style.display = 'none';
+        }
+        if (event.target === addExpenseModal) {
+            addExpenseModal.style.display = 'none';
+        }
+    };
+
+
 
     (async () => {
 
