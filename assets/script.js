@@ -110,6 +110,38 @@ document.addEventListener('DOMContentLoaded', () => {
         addExpenseModal.style.display = 'none';
     };
 
+    expenseForm.onsubmit = async (e) => {
+        e.preventDefault();
+        const newExpense = {
+            name: expenseName.value,
+            description: expenseDescription.value,
+            amount: parseFloat(expenseAmount.value),
+            date: expenseDate.value,
+        };
+
+        let response;
+        if (editingExpenseId) {
+            response = await fetch(`/expenses/${editingExpenseId}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(newExpense),
+            });
+        } else {
+            response = await fetch('/expenses', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(newExpense),
+            });
+        }
+
+        if (response.ok) {
+            addExpenseModal.style.display = 'none';
+            const updatedExpenses = await fetchExpenses();
+            renderExpenses(updatedExpenses);
+            updateChart(updatedExpenses);
+        }
+    };
+
     expenseTable.addEventListener('click', async (e) => {
         if (e.target.classList.contains('edit-btn')) {
             const expenseId = e.target.dataset.id;
