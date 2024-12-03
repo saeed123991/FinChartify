@@ -190,3 +190,17 @@ input[type="date"]:focus {
     border-color: #859F3D;
     outline: none;
 }
+
+#submit-btn {
+    padding: 10px;
+    background-color: #31511E;
+    color: #F6FCDF;
+    font-size: 1rem;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+}
+
+#submit-btn:hover {
+    background-color: #859F3D;
+}
