@@ -98,6 +98,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    document.getElementById('add-expense-btn').onclick = () => {
+        editingExpenseId = null;
+        expenseForm.reset();
+        modalTitle.innerText = "Add Expense";
+        submitBtn.innerText = "Save Expense";
+        addExpenseModal.style.display = 'block';
+    };
+
+    closeBtn.onclick = () => {
+        addExpenseModal.style.display = 'none';
+    };
+
     expenseTable.addEventListener('click', async (e) => {
         if (e.target.classList.contains('edit-btn')) {
             const expenseId = e.target.dataset.id;
