@@ -98,6 +98,36 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    expenseTable.addEventListener('click', async (e) => {
+        if (e.target.classList.contains('edit-btn')) {
+            const expenseId = e.target.dataset.id;
+            const expenses = await fetchExpenses();
+            const expense = expenses.find(exp => exp.id == expenseId);
+            if (expense) {
+                editingExpenseId = expenseId;
+                expenseName.value = expense.name;
+                expenseDescription.value = expense.description;
+                expenseAmount.value = expense.amount;
+                expenseDate.value = expense.date;
+                modalTitle.innerText = "Update Expense";
+                submitBtn.innerText = "Update Expense";
+                addExpenseModal.style.display = 'block';
+            }
+        }
+
+        if (e.target.classList.contains('delete-btn')) {
+            const expenseId = e.target.dataset.id;
+            const isConfirmed = confirm("Are you sure you want to delete this expense?");
+            if (isConfirmed) {
+                const response = await fetch(`/expenses/${expenseId}`, { method: 'DELETE' });
+                if (response.ok) {
+                    const updatedExpenses = await fetchExpenses();
+                    renderExpenses(updatedExpenses);
+                    updateChart(updatedExpenses);
+                }
+            }
+        }
+    });
 
     document.querySelector('#logout-btn').onclick = (event) => {
         event.preventDefault();
