@@ -102,6 +102,38 @@ def manage_expenses(id=None):
                 return jsonify({'message': 'Expense deleted successfully'}), 200
             return jsonify({'message': 'Expense not found'}), 404
 
+
+# Export Expenses to Excel Route
+@app.route('/export', methods=['GET'])
+def export_expenses():
+    if 'user_id' not in session:
+        return redirect(url_for('login'))
+
+    user_id = session['user_id']
+    expenses = Expense.query.filter_by(user_id=user_id).all()
+
+    df = pd.DataFrame([{
+        'Name': exp.name,
+        'Description': exp.description,
+        'Amount €': exp.amount,
+        'Date': exp.date.strftime('%Y-%m-%d')
+    } for exp in expenses])
+
+    output = BytesIO()
+    with pd.ExcelWriter(output, engine='xlsxwriter') as writer:
+        df.to_excel(writer, index=False, sheet_name='Expenses')
+        writer._save()
+
+    output.seek(0)
+    return make_response(
+        output.read(),
+        200,
+        {
+            'Content-Type': 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
+            'Content-Disposition': 'attachment; filename=expenses.xlsx'
+        }
+    )
+
 # Logout Route
 @app.route('/logout')
 def logout():
