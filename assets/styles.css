@@ -172,3 +172,21 @@ label {
 .btnDanger:hover {
     background-color: red;
 }
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"] {
+    padding: 8px;
+    font-size: 1rem;
+    border: 1px solid #31511E;
+    border-radius: 25px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus {
+    border-color: #859F3D;
+    outline: none;
+}
