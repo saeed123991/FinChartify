@@ -107,10 +107,12 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = logoutUrl;
         }
     };
-    
+
     (async () => {
 
-       // async data
+        const expenses = await fetchExpenses();
+        renderExpenses(expenses);
+        updateChart(expenses);
        
     })();
 
