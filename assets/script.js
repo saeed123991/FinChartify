@@ -99,7 +99,15 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
 
-
+    document.querySelector('#logout-btn').onclick = (event) => {
+        event.preventDefault();
+        const logoutUrl = event.target.getAttribute('data-logout-url');
+        const isConfirmed = confirm("Are you sure you want to log out?");
+        if (isConfirmed) {
+            window.location.href = logoutUrl;
+        }
+    };
+    
     (async () => {
 
        // async data
