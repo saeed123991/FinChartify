@@ -1,5 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
- 
     const addExpenseModal = document.getElementById('expense-modal');
     const expenseForm = document.getElementById('expense-form');
     const expenseDate = document.getElementById('expense-date');
@@ -29,6 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const expenses = await response.json();
         return expenses;
     };
+
     const renderExpenses = (expenses) => {
         expenseTable.innerHTML = '';
         expenses.forEach(expense => {
@@ -98,6 +98,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const searchExpenses = async (query) => {
+        const expenses = await fetchExpenses();
+        const filtered = expenses.filter(e =>
+            e.name.toLowerCase().includes(query.toLowerCase()) ||
+            e.description.toLowerCase().includes(query.toLowerCase())
+        );
+        renderExpenses(filtered);
+        updateChart(filtered);
+    };
+
     document.getElementById('add-expense-btn').onclick = () => {
         editingExpenseId = null;
         expenseForm.reset();
@@ -142,6 +152,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    searchInput.addEventListener('input', (e) => {
+        searchExpenses(e.target.value);
+    });
+
     expenseTable.addEventListener('click', async (e) => {
         if (e.target.classList.contains('edit-btn')) {
             const expenseId = e.target.dataset.id;
@@ -182,26 +196,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    const searchExpenses = async (query) => {
-        const expenses = await fetchExpenses();
-        const filtered = expenses.filter(e =>
-            e.name.toLowerCase().includes(query.toLowerCase()) ||
-            e.description.toLowerCase().includes(query.toLowerCase())
-        );
-        renderExpenses(filtered);
-        updateChart(filtered);
-    };
-
-    searchInput.addEventListener('input', (e) => {
-        searchExpenses(e.target.value);
-    });
-
     (async () => {
-
         const expenses = await fetchExpenses();
         renderExpenses(expenses);
         updateChart(expenses);
-       
     })();
-
 });
