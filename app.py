@@ -1,16 +1,15 @@
 from flask import Flask, render_template, request, redirect, url_for, session, jsonify, make_response
 from datetime import datetime
-from models import db, User, Expense
-from config import Config
 from io import BytesIO
 import pandas as pd
-
+from models import db, User, Expense
+from config import Config
 
 app = Flask(__name__, template_folder='UI', static_folder='assets')
 app.config.from_object(Config)
 db.init_app(app)
 
-# this is the default route or landing page of finChartify
+# Route for Index
 @app.route('/')
 def index():
     return render_template('index.html')
@@ -28,6 +27,7 @@ def login():
         return "Invalid Credentials", 401
     return render_template('login.html')
 
+# Register Route
 @app.route('/register', methods=['GET', 'POST'])
 def register():
     if request.method == 'POST':
@@ -102,7 +102,6 @@ def manage_expenses(id=None):
                 return jsonify({'message': 'Expense deleted successfully'}), 200
             return jsonify({'message': 'Expense not found'}), 404
 
-
 # Export Expenses to Excel Route
 @app.route('/export', methods=['GET'])
 def export_expenses():
@@ -140,7 +139,7 @@ def logout():
     session.pop('user_id', None)
     return render_template('index.html')
 
-# from here my app finChartify will start
+# Run the app
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
