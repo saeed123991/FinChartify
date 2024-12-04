@@ -182,6 +182,20 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    const searchExpenses = async (query) => {
+        const expenses = await fetchExpenses();
+        const filtered = expenses.filter(e =>
+            e.name.toLowerCase().includes(query.toLowerCase()) ||
+            e.description.toLowerCase().includes(query.toLowerCase())
+        );
+        renderExpenses(filtered);
+        updateChart(filtered);
+    };
+
+    searchInput.addEventListener('input', (e) => {
+        searchExpenses(e.target.value);
+    });
+
     (async () => {
 
         const expenses = await fetchExpenses();
