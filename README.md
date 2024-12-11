@@ -15,8 +15,8 @@ Effortlessly manage your personal expenses with **FinChartify**, your ultimate e
   - Search expenses dynamically and sort them for better organization.
 - **Data Visualization**:
   - Get insights with a **bar chart** representing your expenses.
-- **PDF Export**:
-  - Save a professional report of your expenses as a PDF document.
+- **Excel Export**:
+  - Save a professional report of your expenses as an Excel File.
 - **Session Management**:
   - **🔒 Logout** securely to protect your data.
 
