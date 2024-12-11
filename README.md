@@ -100,13 +100,17 @@ python app.py
 
 ## 📸 **Screenshots**
 ### Landing Page
-Image will be uploaded soon
+
+![Landing Page](https://github.com/user-attachments/assets/03643885-5018-4a66-9eed-a950074eae52)
 
 ### Dashboard
-Image will be uploaded soon
+
+![Dashboard](https://github.com/user-attachments/assets/8341e7b8-08c2-40f4-8215-3b26e43006c3)
 
 ### Bar Chart
-Image will be uploaded soon
+
+![Chart Modal](https://github.com/user-attachments/assets/3422642f-e02b-483a-8c22-5859543ba74f)
+
 
 ---
 ## 🧩 **Folder Structure**
