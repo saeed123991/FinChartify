@@ -1,6 +1,6 @@
 
 # **FinChartify** 📊💰  
-Effortlessly manage your personal expenses with **FinChartify**, your ultimate expense tracking and reporting tool! This lightweight and user-friendly application enables you to take control of your finances with ease, offering features like expense CRUD operations, visual bar charts, PDF export, and more!
+Effortlessly manage your personal expenses with **FinChartify**, your ultimate expense tracking and reporting tool! This lightweight and user-friendly application enables you to take control of your finances with ease, offering features like expense CRUD operations, visual bar charts, Excel export, and more!
 
 ---
 
